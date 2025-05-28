@@ -15,7 +15,7 @@ export default function Abc() {
                 title: "Lorem Ipsum",
                 body: "Lorem Ipsum",
                 userId: 14131342413
-            });
+            });//sending a random Post object
         }
         catch (err) {
             console.log(err);
@@ -26,16 +26,16 @@ export default function Abc() {
         if(isSuccess && data) {
             dispatch(setPosts({
                 posts: data
-            }));
+            }));//action, payload dispatched to reducer
         }
     }, [isSuccess, data, dispatch]);
 
     useEffect(() => {
-        handleCreatePosts();
+        handleCreatePosts();//POST request to add a new Post
     }, [handleCreatePosts]);
 
     useEffect(() => {
-        console.log(obj);
+        console.log(obj);//status of current request sent via handleCreatePosts
     }, [obj]);
 
     useEffect(() => {
